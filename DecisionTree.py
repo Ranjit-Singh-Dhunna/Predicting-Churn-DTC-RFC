@@ -1,6 +1,6 @@
 # SECTION 0: IMPORTS
 import pandas as pd
-import numpy as np
+
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import seaborn as sns
@@ -129,7 +129,12 @@ print("  Saved: eda_03_categorical_churn_rates.png")
 # --- 2d. Correlation heatmap ---
 fig, ax = plt.subplots(figsize=(9, 7))
 corr = df[numeric_cols + ['Churn']].corr()
-mask = np.triu(np.ones_like(corr, dtype=bool))
+mask = pd.DataFrame(True, index=corr.index, columns=corr.columns)
+for i in range(len(corr)):
+    for j in range(i, len(corr)):
+        mask.iloc[i, j] = True
+    for j in range(0, i):
+        mask.iloc[i, j] = False
 sns.heatmap(
     corr, mask=mask, annot=True, fmt='.2f', ax=ax,
     cmap='coolwarm', center=0, linewidths=0.5,
@@ -314,11 +319,11 @@ metrics  = ['Accuracy', 'Precision', 'Recall', 'F1-Score']
 base_vals = [acc_base, prec_base, rec_base, f1_base]
 tune_vals = [acc, prec, rec, f1]
 
-x   = np.arange(len(metrics))
+x   = list(range(len(metrics)))
 w   = 0.35
 fig, ax = plt.subplots(figsize=(9, 5))
-bars1 = ax.bar(x - w/2, base_vals, w, label='Baseline DT', color=ACCENT, alpha=0.80, edgecolor='none')
-bars2 = ax.bar(x + w/2, tune_vals,  w, label='Tuned DT',    color=POP,   alpha=0.85, edgecolor='none')
+bars1 = ax.bar([xi - w/2 for xi in x], base_vals, w, label='Baseline DT', color=ACCENT, alpha=0.80, edgecolor='none')
+bars2 = ax.bar([xi + w/2 for xi in x], tune_vals,  w, label='Tuned DT',    color=POP,   alpha=0.85, edgecolor='none')
 ax.set_ylim(0, 1.12)
 ax.set_xticks(x)
 ax.set_xticklabels(metrics, fontsize=11)
