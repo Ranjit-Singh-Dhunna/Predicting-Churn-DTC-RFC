@@ -121,7 +121,7 @@ Best Parameters:
 Best CV F1-score  : 0.8954
 ```
 
-![Figure 1: GridSearchCV F1 scores — max_depth vs. min_samples_split (criterion = gini)](diagrams\screenshots/model_06_gridsearch_heatmap.png)
+![Figure 1: GridSearchCV F1 scores — max_depth vs. min_samples_split (criterion = gini)](diagrams_screenshots/model_06_gridsearch_heatmap.png)
 
 ---
 
@@ -131,25 +131,25 @@ Best CV F1-score  : 0.8954
 
 The dataset is imbalanced: approximately **76% of customers churned**, while 24% were retained. This high churn rate underlines the urgency of StreamFlex's problem.
 
-![Figure 2: Overall churn distribution — ~76% of customers churned](diagrams\screenshots/eda_01_churn_distribution.png)
+![Figure 2: Overall churn distribution — ~76% of customers churned](diagrams_screenshots/eda_01_churn_distribution.png)
 
 ### 4.2 Numeric Feature Distributions
 
 Histograms below show the distribution of each numeric feature, segmented by churn status. Notable observations: churned customers show lower subscription lengths and broader complaint distributions.
 
-![Figure 3: Numeric feature distributions coloured by churn status](diagrams\screenshots/eda_02_numeric_distributions.png)
+![Figure 3: Numeric feature distributions coloured by churn status](diagrams_screenshots/eda_02_numeric_distributions.png)
 
 ### 4.3 Categorical Feature Analysis
 
 Churn rates were computed for each category across Membership Type, Payment Method, Preferred Content Type, and Payment Issues.
 
-![Figure 4: Churn rate by categorical features (highest-rate category highlighted in pink)](diagrams\screenshots/eda_03_categorical_churn_rates.png)
+![Figure 4: Churn rate by categorical features (highest-rate category highlighted in pink)](diagrams_screenshots/eda_03_categorical_churn_rates.png)
 
 ### 4.4 Correlation Analysis
 
-![Figure 5: Correlation heatmap of numeric features](diagrams\screenshots/eda_04_correlation_heatmap.png)
+![Figure 5: Correlation heatmap of numeric features](diagrams_screenshots/eda_04_correlation_heatmap.png)
 
-![Figure 6: Box plots of key features by churn status](diagrams\screenshots/eda_05_boxplots.png)
+![Figure 6: Box plots of key features by churn status](diagrams_screenshots/eda_05_boxplots.png)
 
 ---
 
@@ -185,9 +185,9 @@ Classification Report:
 weighted avg       0.81      0.82      0.81       186
 ```
 
-![Figure 7: Confusion Matrix — Tuned Decision Tree](diagrams\screenshots/model_01_confusion_matrix.png)
+![Figure 7: Confusion Matrix — Tuned Decision Tree](diagrams_screenshots/model_01_confusion_matrix.png)
 
-![Figure 8: Baseline vs. Tuned model performance](diagrams\screenshots/model_02_metrics_comparison.png)
+![Figure 8: Baseline vs. Tuned model performance](diagrams_screenshots/model_02_metrics_comparison.png)
 
 ### 5.2 Feature Importance
 
@@ -201,13 +201,13 @@ The tuned Decision Tree reveals the relative importance of each feature in predi
 | 4 | Watch_Time_Hours | 0.1122 |
 | 5 | Resolution_Time_Days | 0.1107 |
 
-![Figure 9: Feature importance ranking (Gini-based, tuned model)](diagrams\screenshots/model_03_feature_importances.png)
+![Figure 9: Feature importance ranking (Gini-based, tuned model)](diagrams_screenshots/model_03_feature_importances.png)
 
 ### 5.3 Decision Tree Visualisation
 
 The figure below shows the top 4 levels of the tuned Decision Tree. The root split is on `Number_of_Complaints ≤ 5.5`, confirming its dominant role. Subsequent splits use Payment_Issues, Watch_Time_Hours, and Resolution_Time_Days.
 
-![Figure 10: Decision Tree — Top 4 levels (readable view)](diagrams\screenshots/model_05_decision_tree_top4.png)
+![Figure 10: Decision Tree — Top 4 levels (readable view)](diagrams_screenshots/model_05_decision_tree_top4.png)
 
 **Screenshot Decision tree rules (text):**
 
