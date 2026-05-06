@@ -1,7 +1,7 @@
 #  Predicting Customer Churn - Decision Tree & Random Forest Classifier
 
  
-Predicting subscriber churn at *StreamFlex*, a subscription-based streaming service, using Decision Tree Classification with hyperparameter tuning via GridSearchCV.
+Predicting subscriber churn at *StreamFlex*, a subscription-based streaming service, using Decision Tree Classification with hyperparameter tuning via GridSearchCV. 
 
 
 ---
@@ -14,7 +14,7 @@ StreamFlex has experienced a rise in customer churn - subscribers cancelling the
 2. Build a predictive model that flags at-risk subscribers
 3. Derive actionable business recommendations to reduce churn
 
-The pipeline covers data cleansing, exploratory data analysis (EDA), model training, hyperparameter tuning with `GridSearchCV`, and final evaluation on a held-out test set.
+The pipeline covers data cleansing, exploratory data analysis (EDA), model training, hyperparameter tuning with `GridSearchCV`, and final evaluation on a held-out test set. Click here to view [Visualisation](./diagrams_screenshots) 
 
 ---
 
